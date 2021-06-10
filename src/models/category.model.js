@@ -1,7 +1,7 @@
 'use strict';
 var dbConn = require('../../config/db.config');
 //Employee object create
-var Category = function(employee){
+var Category = function(category){
   this.id_category     = category.id_category;
   this.category      = category.category;
   
@@ -19,7 +19,7 @@ else{
 });
 };
 Category.findById = function (id, result) {
-dbConn.query("Select * from category where id = ? ", id, function (err, res) {
+dbConn.query("Select * from category where id_category = ? ", id, function (err, res) {
   
 if(err) {
   console.log("error: ", err);
@@ -64,5 +64,5 @@ else{
 });
 };
 
-module.exports= category;
+module.exports= Category;
 

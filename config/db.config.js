@@ -7,7 +7,7 @@ const dbConn = mysql.createConnection({
   password : '',
   database : 'faq'
 });
-dbConn.connect(function(err) {
+dbConn.connect(function(err,result) {
   if (err) throw err;
   console.log("Database Connected!");
 });
